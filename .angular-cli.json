@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.scss",
-        "material.custom.scss"
+        "material.blackmaw.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
