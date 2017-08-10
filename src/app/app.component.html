@@ -3,14 +3,12 @@
     GH
   </span>
   <span>
-    {{title}}
+    <a md-button routerLink="/">
+      {{title}}
+    </a>
   </span>
+  <bm-navbar></bm-navbar>
   <span class="blackmaw-spacer"></span>
-  <md-icon class="blackmaw-icon">verified_user</md-icon>
+  <bm-account></bm-account>
 </md-toolbar>
-
-
-<button md-raised-button>
-  Angular Material works!
-  <md-icon>done</md-icon>
-</button>
+<router-outlet></router-outlet>

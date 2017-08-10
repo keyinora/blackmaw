@@ -5,14 +5,14 @@
 body{
     margin: 0;
     color: #EEE;
-    background-color: #212121;
+    background-color: #37474f;
 }
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$blackmaw-primary: mat-palette($mat-blue-grey, 700, 200, 800);
-$blackmaw-accent:  mat-palette($mat-blue, 500, 200, 800);
+$blackmaw-primary: mat-palette($mat-teal, 700, 200, 800);
+$blackmaw-accent:  mat-palette($mat-blue-grey, 500, 200, 800);
 
 // $blackmaw-primary: mat-palette($mat-blue-grey, A200, A100, A400);
 // $blackmaw-accent:  mat-palette($mat-teal, A200, A100, A400);

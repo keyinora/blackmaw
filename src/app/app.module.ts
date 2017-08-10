@@ -1,23 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule, MdButtonModule } from '@angular/material';
+
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { CharactersRoutingModule } from './characters/characters-routing.module';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    CalendarComponent,
+    AccountComponent
   ],
   imports: [
-    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MdButtonModule,
+    // App Code
+    CharactersRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AngularFireAuth
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

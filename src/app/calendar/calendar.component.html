@@ -1,0 +1,12 @@
+<md-grid-list cols="7">
+   <md-grid-tile
+      *ngFor="let tile of tiles | async"
+      [colspan]="tile.colspan"
+      [rowspan]="tile.rowspan"
+      [style.background]="tile.color">
+    {{tile.$key}}
+  </md-grid-tile> 
+  <md-grid-tile>
+    Add New <md-icon>add</md-icon>
+  </md-grid-tile>
+</md-grid-list>
