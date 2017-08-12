@@ -1,9 +1,0 @@
-
-<span *ngIf="(user | async); else elseBlock">
-    <div> {{ (user | async)?.uid }} </div>
-    <button md-button (click)="logout()">Logout</button>
-    <md-icon class="blackmaw-icon">verified_user</md-icon>
-</span>
-<ng-template #elseBlock>
-    <button md-button (click)="login()">Login</button>
-</ng-template>

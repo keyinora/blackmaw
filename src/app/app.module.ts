@@ -12,16 +12,22 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { CharactersRoutingModule } from './characters/characters-routing.module';
-import { AccountComponent } from './account/account.component';
+import { AccountRoutingModule } from './account/account-routing.module';
+import { CalendarRoutingModule } from './calendar/calendar-routing.module';
+import { AccountDetailsComponent } from "./account/account-details/account-details.component";
+import { CalendarComponent } from "./calendar/calendar/calendar.component";
+import { AuthService } from "./providers/auth.service";
+import { AccountModule } from "./account/account.module";
+import { LoginComponent } from "./account/login/login.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     CalendarComponent,
-    AccountComponent
+    AccountDetailsComponent,
+    LoginComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -33,10 +39,13 @@ import { AccountComponent } from './account/account.component';
     MaterialModule,
     MdButtonModule,
     // App Code
-    CharactersRoutingModule
+    CharactersRoutingModule,
+    AccountRoutingModule,
+    CalendarRoutingModule
   ],
   providers: [
-    AngularFireAuth
+    AngularFireAuth,
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })
