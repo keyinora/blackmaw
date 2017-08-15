@@ -1,5 +1,5 @@
 
-<span *ngIf="user | async; let user; else loginDisplay">
+<span *ngIf="afAuthService.user | async; let user; else loginDisplay">
     {{user.displayName}}
     <button md-button (click)="logout()">Logout</button>
 </span>

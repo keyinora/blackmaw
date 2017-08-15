@@ -10,21 +10,22 @@ import { AuthService } from "../../providers/auth.service";
   templateUrl: './account-details.component.html'
 })
 export class AccountDetailsComponent implements OnInit {
-  user: Observable<firebase.User>;
   provider: firebase.auth.GoogleAuthProvider;
+  user: Observable<firebase.User>;
 
-  constructor(public sfAuthService: AuthService) {
+  constructor(public afAuthService: AuthService) {
   }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
   
   login() {
-    this.user = this.sfAuthService
-      .getAuthState(new firebase.auth.GoogleAuthProvider());
+    this.afAuthService.login(new firebase.auth.GoogleAuthProvider())
+      .catch(console.log);
+    console.log(this.user);
   }
 
   logout() {
-    this.user = this.sfAuthService.logout();
+    this.afAuthService.logout();
   }
 }
